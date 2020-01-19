@@ -1,0 +1,246 @@
+<div fxLayout='column' class="container">
+    <div class="header" fxLayout='row'>
+      <div class='logo-container' fxFlex="30" fxLayout='column'>
+        <img src='../assets/512x512bb.jpg'>
+        <p>HOTELS</p>
+      </div>
+  <div fxFlex="70" fxLayoutAlign="end">
+    <button class="log-out-button" >
+      <mat-icon>power_settings_new</mat-icon>
+      <span>Log out</span>
+    </button>
+  </div>
+    </div>
+    <div fxLayout='row' >
+   <div fxFlex="16" >
+     <div fxLayout="column" class='list'>
+      <div fxLayout="row">
+        <mat-icon >dashboard</mat-icon>
+        <a >Dashboard</a >
+      </div>
+      <div fxLayout="row">
+        <mat-icon >assignment</mat-icon>
+        <a >Testimonials</a >
+        <mat-icon>arrow_drop_down</mat-icon>
+      </div>  <div fxLayout="row">
+        <mat-icon >sort_by_alpha</mat-icon>
+        <a >Benifits</a >
+        <mat-icon >arrow_drop_down</mat-icon>
+  
+      </div>  <div fxLayout="row">
+        <mat-icon >school</mat-icon>
+        <a >Queries</a >
+        <mat-icon >arrow_drop_down</mat-icon>
+  
+      </div>  <div fxLayout="row">
+        <mat-icon >rate_review</mat-icon>
+        <a >Contact</a >
+        <mat-icon >arrow_drop_down</mat-icon>
+  
+      </div>  <div fxLayout="row">
+        <mat-icon >event_note</mat-icon>
+        <a >ABout Us</a >
+        <mat-icon >arrow_drop_down</mat-icon>
+  
+      </div> 
+     </div>
+     
+    </div>
+    <div fxFlex="84" class="large-container" fxLayout="column">
+<div class="tracking" fxLayoutAlign="center" fxLayout="row">
+  <mat-card fxFlex="25" fxLayout='column' fxLayoutAlign="center" > 
+    <p>No of visitors</p>
+   <span> {{visitors}}</span>  
+</mat-card> 
+  <mat-card fxFlex="25" fxLayout='column' fxLayoutAlign="center">
+   <p>Complete Booking</p>
+   <span>{{countcompletebooking}}</span> 
+  </mat-card>
+  <mat-card fxFlex="25" fxLayout='column' fxLayoutAlign="center">
+    <p>Draft Booking</p>
+   <span>{{countdraftbooking}}</span> 
+  </mat-card>
+</div>
+<div *ngIf="!bookingpage"  fxLayout="column" class="hotel-list">
+<div *ngFor="let hotel of sortedhoteldata">
+  <mat-card  fxLayout='row'>
+    <img src='../../assets/images.jfif'>
+   <div fxFlex="50"  class="details" fxLayout="column">
+   <span>{{hotel.name}} ({{hotel.location}})</span>
+   <star-rating value="5" totalstars="5" checkedcolor="gold" uncheckedcolor="black" size="24px" readonly="false" (rate)="onRate($event)"></star-rating>
+   <p>3.8 km from atlantis water sports</p>
+     <ul> 
+       <li>Swimming Pool</li>
+       <li>Parking</li>
+       <li>House Keeping</li>
+     </ul>
+   </div>
+   <div class="price" fxLayoutAlign="center" fxLayout="column">
+   <span>INR 10,000</span>
+     
+     <a (click)="book(hotel.location) ">Book Now</a >
+   
+   </div>
+   </mat-card>
+   
+</div>
+  
+     
+</div>
+  
+
+
+
+       <div fxFlex="84" *ngIf="bookingpage && !paymentpage" >
+
+      
+      <form [formGroup]="recipeForm" fxLayoutAlign="center" (ngSubmit)="onSubmit()">
+        <div fxLayout="column"  class="form" >
+         
+          <label for="name">Name</label>
+          <input #namevalue
+          (change)='test1("name")'
+            type="text"
+            id="name"
+            formControlName="name"
+            class="form-control">
+          
+         
+            <label for="name">Age</label>
+            <input
+            (change)='test1("age")'
+              type="text"
+              id="age"
+              formControlName="bookingdate"
+              class="form-control">
+              <label for="name">Booking Date</label>
+              <input
+              
+              (change)='test1("bookingdate")'
+                type="text"
+                id="bookingdate"
+                formControlName="bookingdate"
+                class="form-control">
+                <label for="name">Email</label>
+              <input
+              
+              (change)='test1("email")'
+                type="text"
+                id="email"
+                formControlName="email"
+                class="form-control">
+                <label for="name">Location</label>
+              <input
+              
+              (change)='test1("location")'
+                type="text"
+                id="location"
+                formControlName="location"
+                class="form-control">
+                <div fxLayoutAlign="center" class="buttons" fxLayout="row">
+                  <button
+                   (click)="back()"
+                  
+                  class="back"
+                  >Back</button>
+                  <button
+                  
+              [disabled]='!allfilled'
+                  type="submit"
+                  class="book"
+                  >Book</button>
+                <button type="button" class=
+                'cancel' (click)="test()">Cancel</button>
+                </div>
+                
+        </div>      
+        
+                  </form>
+                 
+                  <a id="recommendedlink">Recommended Hotels</a>
+        <div *ngIf="bookingpage && !paymentpage &&recommendedhotel" fxLayoutAlign="start" fxLayout="row" class="recommended">
+        
+          <div fxFlex="20" *ngFor="let hotel of recommendedhotel let i=index">
+        <mat-card fxFlex="100" *ngIf="i<5"  fxLayout='column'   fxLayoutAlign="center" >
+      
+          <img src='../../assets/images.jfif'>
+
+          <span>{{hotel.name}}<br>({{hotel.location}})</span>
+          <star-rating value="5" totalstars="5" checkedcolor="gold" uncheckedcolor="black" size="24px" readonly="false" (rate)="onRate($event)"></star-rating>
+       
+            <ul> 
+              <li>Swimming Pool</li>
+              <li>Parking</li>
+              <li>House Keeping</li>
+            </ul>
+            </mat-card> 
+          </div>
+          </div>
+       </div>
+
+                
+            
+                <div *ngIf='paymentpage'>
+        <form [formGroup]="recipeForm" fxLayoutAlign="center" (ngSubmit)="payment()">
+          <div fxLayout="column"  class="form" >
+         
+            <label for="name">Card Number(Debit/Credit)</label>
+            <input #namevalue
+           
+              type="text"
+              
+              
+              class="form-control">
+            
+           
+              <label for="name">Card Holder Name</label>
+              <input
+              
+                type="text"
+                
+                
+                class="form-control">
+                <label for="name">Bank Name</label>
+                <input
+                
+               
+                  type="text"
+                 
+            
+                  class="form-control">
+                  <label for="name">Cvv</label>
+                <input
+                
+                
+                  type="text"
+                  
+               
+                  class="form-control">
+                  <label for="name">Payment Gateway</label>
+                <input
+                
+                
+                  type="text"
+                  
+                  
+                  class="form-control">
+                  <div fxLayoutAlign="center" class="buttons" fxLayout="row">
+                    
+                    <button
+      
+                    type="submit"
+                    class="book"
+                    >Pay</button>
+                  <button type="button" class=
+                  'cancel' (click)="paycancel()">Cancel</button>
+                  </div>
+                  
+          </div>      
+          
+                          </form>
+       
+    </div> 
+   
+   
+  </div>
+  

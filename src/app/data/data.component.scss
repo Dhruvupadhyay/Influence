@@ -1,0 +1,253 @@
+
+.header{
+    .logo-container{
+        p{
+            letter-spacing: 4px;
+            font-size: 12px;
+font-weight: 300;
+color: rgb(145, 143, 143);
+            margin-top: 4px;
+            margin-left: 6%;
+        }
+        img{
+        align-self: auto;
+            width:9%;
+            height: 30px;
+            margin-left: 9%;
+            margin-top: 3%;
+        }   
+         
+    }
+   
+   .log-out-button{
+    background: linear-gradient(to top, #00406e 0%,#6fc3c9 70%,#5b7983 100%);
+       font-weight: 200;
+       color:white;
+       span{
+           margin-top: -20px;
+           font-size: 13px;
+
+       }
+       mat-icon{
+           font-size: 14px;
+           margin-top: 20px;
+       }
+ 
+       
+    
+    }
+
+    width: 100%;
+    height:70px;
+    background-color: rgba(247, 247, 247, 0.87);
+    border: solid rgb(235, 235, 235);
+    border-width: 0.6px;
+}
+.container-1{
+#heading{
+    font-size: 25px;
+    align-self: center;
+    color: rgb(252, 144, 105);
+    font-weight: 100;
+    font-family: sans-serif;
+}
+.box-3{
+ margin-top: 25px;
+    width:100%;
+}
+
+.box-1{
+    
+    height: 300px;
+    border-right: solid rgb(243, 243, 243);
+    border-bottom: solid rgb(243, 242, 242); 
+
+    border-width: 5px;
+}
+.box-2{
+    height: 300px;
+    border-bottom: solid  rgb(243, 242, 242);
+    border-width: 5px;
+    
+}   
+}
+.list{
+    height:780px;
+    padding-top: 10px;
+    a{
+        margin-left: 2%;
+        color: white;
+        margin-bottom: 40px;
+    }
+    
+    
+    
+     background: linear-gradient(to top, #00406e 0%,#6fc3c9 70%,#5b7983 100%); 
+    mat-icon{
+        margin-left: 5px;
+        color:white;
+    }
+}
+.large-container{
+    background-color: rgb(235, 235, 235);
+.tracking{
+    mat-card{
+        text-align: center;
+        p{
+            font-size: 25px;
+            color: rgb(131, 131, 131);;
+        }
+        span{
+            font-weight: bold;
+            font-size: 50px;
+        }
+        background-color: white;
+        margin-right: 30px;
+        height:180px;
+    }
+}
+.hotel-list{
+    
+    mat-card{
+        star-rating{
+            margin-left: 20px;
+            margin-bottom: 5px;
+        }
+        background-color: white;
+        margin-top: 20px;
+        height:auto;
+        img{
+            margin-left: -8px;
+            
+            height:170px;
+        }
+    .details{
+        margin-left: 30px;
+        span{
+            margin-left: 20px;
+            font-size: 26px;
+            font-weight: bold;
+            
+        }
+        p{
+            margin-top: 0px;
+            margin-bottom: -7px;
+            color: rgb(14, 13, 13);
+            margin-left: 20px;
+        }
+        ul{
+            li{
+                font-family: sans-serif;
+                font-weight: 100;
+                font-size: 12px;
+                margin-bottom: 4px;
+            }
+        }
+    }
+    .price{
+       
+        margin-left: 50px;
+        
+           a{
+            font-size: 30px;
+            text-decoration: underline;
+                font-weight: 400;
+                color:#065af3;
+              
+                
+           }  
+               span{
+                   margin-top: -15px;
+                  margin-bottom: 10px;
+                   font-size: 25px;
+                   font-weight: bold;
+
+        
+               }
+               mat-icon{
+                   font-size: 14px;
+                   margin-top: 20px;
+               }
+         
+               
+            
+            
+    }
+       
+}
+}
+}
+.form{
+    margin-top: 20px;
+    label{
+        margin-bottom: 5px;
+        font-size: 20px;
+font-weight: bold;
+color: rgb(85, 84, 84);
+    }
+    input{
+        margin-bottom: 12px;
+        font-size: 15px;
+        height:25px;
+      
+        width: 500px;
+    }
+    .buttons{
+        .back{
+            background: linear-gradient(to top, #00406e 0%,#6fc3c9 70%,#5b7983 100%);
+            color: white;
+            margin-right: 40px;
+      height:50px;
+            width:80px;
+             
+           
+            font-size: 20px;
+            font-weight: 400;
+        }
+        .book{
+            color: white;
+            margin-right: 40px;
+      height:50px;
+            width:80px;
+             
+            background-color: #6fc3c9;
+            font-size: 20px;
+            font-weight: 400;
+        }
+        .cancel{
+            color: white;
+            font-size: 20px;
+            font-weight: 400;
+          
+            background: linear-gradient(to top, #00406e 0%,#6fc3c9 70%,#5b7983 100%); 
+            height:50px;
+            width:80px;
+        }
+    }
+}
+.recommended{
+    margin-top:30px;
+    span{
+        text-align: center;
+    }
+    star-rating{
+        align-self: center;
+        margin-bottom: -8px;
+    }
+    mat-card{
+        margin-right: 4px;
+        background-color: white;
+    }
+    img{
+        height:130px;
+        margin-top: -12px;
+    }
+   
+}
+#recommendedlink{
+margin-top: !important 40px;
+    font-size: 30px;
+    font-weight: 400;
+    text-decoration: underline;
+    color: #0676c5;
+}
